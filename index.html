@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de Gasto Estudiantil - IPEU</title>
+    <meta name="description" content="Encuesta rápida para conocer cuánto gastamos los estudiantes en el campus y sus alrededores.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-shapes-container">
+        <div class="bg-shape shape-1"></div>
+        <div class="bg-shape shape-2"></div>
+    </div>
+
+    <header class="glass-header">
+        <div class="container header-container">
+            <div class="logo-wrapper">
+                <img src="assets/logo.svg" alt="Universidad de O'Higgins Logo" class="logo">
+            </div>
+            <div class="header-tag">Estudio de Costo de Vida</div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="survey-hero container">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    ¿Cuánto gastamos <br class="desktop-br"><span class="highlight">en la Universidad?</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Queremos saber cómo afecta el costo de la vida a los estudiantes en el día a día. Cuéntanos cuánto y en qué gastas cuando vienes a clases. ¡Tardará menos de 1 minuto!
+                </p>
+                <div class="instructions-card glass-card">
+                    <h3>📢 ¿Para qué sirve esta encuesta?</h3>
+                    <ul>
+                        <li><strong>Comparar precios:</strong> Queremos comprobar si los locales comerciales que rodean el campus cobran de más por conveniencia o cercanía.</li>
+                        <li><strong>Analizar el presupuesto:</strong> Buscamos entender en qué se va el dinero del día a día (almuerzos, transporte, impresiones).</li>
+                        <li><strong>Detectar porciones más chicas:</strong> Evaluamos si los locales reducen el tamaño de la comida sin bajar los precios (achicamiento de porciones).</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="survey-form-container">
+                <div class="glass-card form-card">
+                    <div class="form-header">
+                        <h2>Encuesta Rápida de Gastos</h2>
+                        <p>Tus respuestas son 100% anónimas y nos ayudarán a elaborar un reporte estudiantil real.</p>
+                    </div>
+                    <form id="price-survey-form">
+                        
+                        <!-- Sección 1: Frecuencias -->
+                        <div class="form-section-title">1. ¿Cuántos días a la semana consumes esto?</div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="frec_casino">Almuerzo en el Casino</label>
+                                <input type="number" id="frec_casino" name="frec_casino" min="0" max="7" placeholder="Ej. 3 días" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="frec_comida">Comida al paso o colaciones</label>
+                                <input type="number" id="frec_comida" name="frec_comida" min="0" max="7" placeholder="Ej. 2 días" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="frec_cafe">Café o bebidas de paso</label>
+                                <input type="number" id="frec_cafe" name="frec_cafe" min="0" max="7" placeholder="Ej. 4 días" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="frec_copias">Fotocopias o impresiones</label>
+                                <input type="number" id="frec_copias" name="frec_copias" min="0" max="7" placeholder="Ej. 1 día" required>
+                            </div>
+                        </div>
+
+                        <!-- Sección 2: Presupuesto % -->
+                        <div class="form-section-title">2. ¿Cómo divides tu presupuesto diario en la U?</div>
+                        <p class="form-section-subtitle">Distribuye un porcentaje aproximado (debe sumar 100%):</p>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="pct_comida">Almuerzo y comida</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="pct_comida" name="pct_comida" min="0" max="100" placeholder="Ej. 50" required>
+                                    <span class="suffix-percent">%</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="pct_cafe">Café, bebidas y dulces</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="pct_cafe" name="pct_cafe" min="0" max="100" placeholder="Ej. 20" required>
+                                    <span class="suffix-percent">%</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="pct_copias">Fotocopias e impresión</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="pct_copias" name="pct_copias" min="0" max="100" placeholder="Ej. 10" required>
+                                    <span class="suffix-percent">%</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="pct_otros">Otros (librería, etc.)</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="pct_otros" name="pct_otros" min="0" max="100" placeholder="Ej. 20" required>
+                                    <span class="suffix-percent">%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sección 3: Gasto y Shrinkflation -->
+                        <div class="form-section-title">3. Gasto mensual y percepciones</div>
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="gasto_mensual">Gasto Mensual Estimado en la U</label>
+                                <div class="input-wrapper">
+                                    <span class="prefix">$</span>
+                                    <input type="number" id="gasto_mensual" name="gasto_mensual" min="0" placeholder="Ej. 45000" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="shrinkflation">¿Sientes que te dan menos por el mismo precio?</label>
+                                <select id="shrinkflation" name="shrinkflation" required>
+                                    <option value="" disabled selected>Elige una opción</option>
+                                    <option value="si">Sí, he notado porciones o envases más chicos</option>
+                                    <option value="no">No, se mantienen iguales</option>
+                                    <option value="ns_nc">No consumo / No he prestado atención</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-submit">Enviar Respuestas</button>
+                    </form>
+                    
+                    <div id="form-feedback" class="form-feedback hidden">
+                        <div class="success-message">
+                            <span class="success-icon">✓</span>
+                            <div>
+                                <h4>¡Respuestas Guardadas!</h4>
+                                <p>Muchas gracias por participar. Tu aporte nos servirá para analizar y evidenciar el verdadero costo de estudiar en nuestro campus.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Universidad de O'Higgins - Proyecto Estudiantil de Investigación de Mercados</p>
+            <p class="disclaimer">Plataforma educativa para medir el impacto de la inflación local en nuestra comunidad.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+{
+    "resumen_gasto_mensual": {
+        "n": 333,
+        "universo_N": 5000,
+        "media_muestral": 160971.47,
+        "mediana": 159000,
+        "media_referencia_ciudad": 130000,
+        "varianza": 1540552647.53,
+        "desviacion_estandar": 39249.87,
+        "error_estandar": 2150.88,
+        "fpc": 0.9662,
+        "error_muestral_absoluto": 2078.23,
+        "error_muestral_relativo_pct": 1.29,
+        "z_score": 14.4,
+        "diferencial_costo_pct": 23.82
+    },
+    "frecuencias_consumo_dias": {
+        "frec_casino": {
+            "media": 2.2,
+            "varianza": 1.3359,
+            "desviacion_estandar": 1.16
+        },
+        "frec_comida": {
+            "media": 1.79,
+            "varianza": 1.0563,
+            "desviacion_estandar": 1.03
+        },
+        "frec_cafe": {
+            "media": 3.88,
+            "varianza": 2.4434,
+            "desviacion_estandar": 1.56
+        },
+        "frec_copias": {
+            "media": 3.44,
+            "varianza": 1.5482,
+            "desviacion_estandar": 1.24
+        }
+    },
+    "ponderacion_presupuesto_pct": {
+        "pct_comida": {
+            "media_porcentaje": 49.23,
+            "desviacion_estandar": 12.09
+        },
+        "pct_cafe": {
+            "media_porcentaje": 21.6,
+            "desviacion_estandar": 8.37
+        },
+        "pct_copias": {
+            "media_porcentaje": 10.68,
+            "desviacion_estandar": 4.44
+        },
+        "pct_otros": {
+            "media_porcentaje": 18.48,
+            "desviacion_estandar": 5.61
+        }
+    },
+    "percepcion_shrinkflation": {
+        "conteo": {
+            "si": 242,
+            "no": 59,
+            "ns_nc": 32
+        },
+        "porcentaje": {
+            "si": 72.67,
+            "no": 17.72,
+            "ns_nc": 9.61
+        },
+        "test_proporcion": {
+            "p_observado": 0.7267,
+            "p_nulo": 0.5,
+            "z_score": 8.27,
+            "conclusion": "Rechaza H0: La percepción de shrinkflation es significativamente mayor al 50%"
+        }
+    }
+}

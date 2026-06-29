@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPEU-Rancagua · Informe Interactivo</title>
+    <meta name="description" content="Índice de Precios del Entorno Universitario — Análisis visual e interactivo del costo de vida estudiantil en el Campus Rancagua de la Universidad de O'Higgins.">
+    <link rel="stylesheet" href="informe_interactivo_styles.css">
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<nav class="site-nav" id="siteNav">
+    <div class="nav-inner">
+        <a href="#" class="nav-brand">
+            <img src="uoh_logo.svg" alt="Universidad de O'Higgins">
+            <span>IPEU Rancagua</span>
+        </a>
+        <div class="nav-tabs" role="tablist">
+            <button class="nav-tab active" role="tab" data-section="resumen" aria-selected="true">Resumen</button>
+            <button class="nav-tab" role="tab" data-section="canasta">Canasta</button>
+            <button class="nav-tab" role="tab" data-section="hipotesis">Hipótesis</button>
+            <button class="nav-tab" role="tab" data-section="sesgos">Sesgos</button>
+            <button class="nav-tab" role="tab" data-section="propuestas">Propuestas</button>
+        </div>
+    </div>
+</nav>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<header class="hero" id="hero">
+    <div class="hero-inner">
+        <div class="hero-eyebrow">
+            <span class="dot"></span>
+            Campus Rancagua · Universidad de O'Higgins · Junio 2026
+        </div>
+        <h1 class="display-xl">El costo real de estudiar<br>en tu campus</h1>
+        <p class="hero-subtitle">
+            Analizamos los datos de 333 estudiantes para revelar cuánto más caro es vivir el día a día dentro del campus — y qué puede hacer la universidad al respecto.
+        </p>
+        <div class="hero-metrics">
+            <div class="hero-metric metric-accent-blue">
+                <div class="metric-value">$161.000</div>
+                <div class="metric-label">Gasto mensual promedio del estudiante en el campus</div>
+            </div>
+            <div class="hero-metric metric-accent-orange">
+                <div class="metric-value">+23,8%</div>
+                <div class="metric-label">Más caro que el costo de vida de referencia en Rancagua</div>
+            </div>
+            <div class="hero-metric metric-accent-cyan">
+                <div class="metric-value">72,7%</div>
+                <div class="metric-label">Perciben que las porciones son más pequeñas por el mismo precio</div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ============================================================
+     SECTION 1: RESUMEN (Tablero General)
+     ============================================================ -->
+<section class="section" id="resumen">
+    <div class="section-inner">
+        <div class="section-header fade-up">
+            <h2 class="display-md">Tablero General</h2>
+            <p class="body-lg text-secondary">Los números clave del estudio IPEU-Rancagua extraídos de una muestra de <strong>333 encuestas</strong> sobre un universo de 5.000 estudiantes.</p>
+        </div>
+
+        <!-- Bento Grid de estadísticas -->
+        <div class="bento-grid stagger-children fade-up">
+
+            <!-- Card 1: Gasto mensual -->
+            <div class="card stat-card" style="--i:0">
+                <div class="stat-icon icon-blue">💰</div>
+                <div class="stat-value">$160.971</div>
+                <div class="stat-label">Gasto mensual promedio en el campus (media muestral)</div>
+                <div class="stat-detail">Mediana: $159.000 · La coincidencia entre media y mediana indica una distribución simétrica sin valores atípicos extremos.</div>
+            </div>
+
+            <!-- Card 2: Brecha de costo -->
+            <div class="card stat-card" style="--i:1">
+                <div class="stat-icon icon-orange">📈</div>
+                <div class="stat-value" style="color: var(--orange)">+23,82%</div>
+                <div class="stat-label">Sobrecosto vs. referencia en Rancagua ($130.000)</div>
+                <div class="stat-detail">Diferencial de ~$31.000 CLP mensuales. Este recargo se denomina "Premium de Cercanía": el campus opera como un mercado cautivo.</div>
+            </div>
+
+            <!-- Card 3: Precisión del estudio -->
+            <div class="card stat-card" style="--i:2">
+                <div class="stat-icon icon-emerald">✅</div>
+                <div class="stat-value" style="color: var(--emerald)">1,29%</div>
+                <div class="stat-label">Error muestral relativo</div>
+                <div class="stat-detail">Calificación INE: Precisión "excelente". Margen de error absoluto: ±$4.073 CLP al 95% de confianza.</div>
+            </div>
+
+            <!-- Card 4: Dispersión (span-2) -->
+            <div class="card stat-card span-2" style="--i:3">
+                <div class="stat-icon icon-cyan">📊</div>
+                <div class="stat-value" style="color: var(--cyan)">$39.250</div>
+                <div class="stat-label">Desviación estándar del gasto mensual (CV = 24,38%)</div>
+                <div class="stat-detail">
+                    La variabilidad es moderada y refleja diferencias reales: estudiantes de comunas alejadas con costos de traslado vs. residentes locales, distintos niveles de becas e ingresos autónomos.
+                    <br><br>
+                    <strong>Nota sobre falsa precisión:</strong> Los decimales ($160.971,47) son artefactos matemáticos. Los estudiantes estiman su gasto mentalmente, redondeando. Los valores significativos reales son $161.000 y $39.250.
+                </div>
+            </div>
+
+            <!-- Card 5: Shrinkflation -->
+            <div class="card stat-card" style="--i:4">
+                <div class="stat-icon icon-rose">📉</div>
+                <div class="stat-value" style="color: var(--rose)">72,67%</div>
+                <div class="stat-label">Percibe shrinkflation (porciones más chicas, mismo precio)</div>
+                <div class="stat-detail">242 de 333 estudiantes. El 17,72% no la percibe y un 9,61% no sabe o no contesta.</div>
+            </div>
+        </div>
+
+        <!-- Callout sobre metodología -->
+        <div class="callout callout-info fade-up" style="margin-top: var(--space-10);">
+            <div class="callout-icon">ℹ</div>
+            <div>
+                <strong>¿De dónde salen estos datos?</strong> Se aplicó una encuesta digital cuantitativa a 333 estudiantes del Campus Rancagua de la UOH (universo ~5.000). El diseño es descriptivo, transversal, y sigue las directrices del INE para encuestas de presupuestos familiares.
+            </div>
+        </div>
+
+        <!-- Flujo Metodológico -->
+        <div class="method-flow fade-up" style="margin-top: var(--space-10);">
+            <div class="method-step">
+                <div class="method-step-num icon-blue">1</div>
+                <h4>Exploración</h4>
+                <p>Entrevistas y minería de opinión para identificar 4 categorías de gasto</p>
+            </div>
+            <div class="method-step">
+                <div class="method-step-num icon-cyan">2</div>
+                <h4>Encuesta Digital</h4>
+                <p>Formulario validado con auto-ajuste al 100% y filtros anti-error</p>
+            </div>
+            <div class="method-step">
+                <div class="method-step-num icon-emerald">3</div>
+                <h4>Análisis</h4>
+                <p>333 respuestas procesadas con estadígrafos y pruebas de hipótesis Z</p>
+            </div>
+            <div class="method-step">
+                <div class="method-step-num icon-amber">4</div>
+                <h4>SAD / DSS</h4>
+                <p>Los resultados alimentan un Sistema de Apoyo a las Decisiones institucional</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION 2: CANASTA ESTUDIANTIL
+     ============================================================ -->
+<section class="section section-alt" id="canasta">
+    <div class="section-inner">
+        <div class="section-header fade-up">
+            <h2 class="display-md">La Canasta Estudiantil</h2>
+            <p class="body-lg text-secondary">Así se distribuye cada peso que un estudiante gasta en el campus. La alimentación domina la mitad del presupuesto diario.</p>
+        </div>
+
+        <!-- Donut Chart + Legend -->
+        <div class="card fade-up" style="margin-bottom: var(--space-8);">
+            <div class="donut-container">
+                <div class="donut-chart">
+                    <svg viewBox="0 0 240 240">
+                        <!-- Almuerzo y Comida: 49.23% -->
+                        <circle
+                            stroke="#2563eb"
+                            stroke-dasharray="309.3 628.3"
+                            stroke-dashoffset="0"
+                            r="100" cx="120" cy="120"
+                        ></circle>
+                        <!-- Café y Bebidas: 21.60% -->
+                        <circle
+                            stroke="#0891b2"
+                            stroke-dasharray="135.8 628.3"
+                            stroke-dashoffset="-309.3"
+                            r="100" cx="120" cy="120"
+                        ></circle>
+                        <!-- Otros: 18.48% -->
+                        <circle
+                            stroke="#d97706"
+                            stroke-dasharray="116.1 628.3"
+                            stroke-dashoffset="-445.1"
+                            r="100" cx="120" cy="120"
+                        ></circle>
+                        <!-- Fotocopias: 10.68% -->
+                        <circle
+                            stroke="#059669"
+                            stroke-dasharray="67.1 628.3"
+                            stroke-dashoffset="-561.2"
+                            r="100" cx="120" cy="120"
+                        ></circle>
+                    </svg>
+                    <div class="donut-center">
+                        <span class="value">100%</span>
+                        <span class="label">Canasta</span>
+                    </div>
+                </div>
+
+                <div class="donut-legend">
+                    <div class="legend-item">
+                        <div class="legend-swatch" style="background:#2563eb"></div>
+                        <div class="legend-info">
+                            <span class="legend-name">Almuerzo y Comida (Casino / Paso)</span>
+                            <span class="legend-pct">49,23% · CV 24,56%</span>
+                        </div>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-swatch" style="background:#0891b2"></div>
+                        <div class="legend-info">
+                            <span class="legend-name">Café, Bebidas y Dulces</span>
+                            <span class="legend-pct">21,60% · CV 38,75%</span>
+                        </div>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-swatch" style="background:#d97706"></div>
+                        <div class="legend-info">
+                            <span class="legend-name">Otros (Librería, Útiles, etc.)</span>
+                            <span class="legend-pct">18,48% · CV 30,36%</span>
+                        </div>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-swatch" style="background:#059669"></div>
+                        <div class="legend-info">
+                            <span class="legend-name">Fotocopias e Impresión</span>
+                            <span class="legend-pct">10,68% · CV 41,57%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interpretación clave -->
+        <div class="bento-grid fade-up" style="grid-template-columns: 1fr 1fr;">
+            <div class="card card-compact card-flat">
+                <h4 class="display-sm" style="color: var(--accent); margin-bottom: var(--space-3);">Gasto Transversal y Estable</h4>
+                <p class="body-sm text-secondary">El <strong>Almuerzo y Comida</strong> concentra casi la mitad del presupuesto (49,23%) con un coeficiente de variación bajo (24,56%). Es un gasto de <em>primera necesidad</em>: todos los estudiantes, sin importar su presupuesto total, destinan una fracción similar. Por eso, cualquier subsidio directo al almuerzo tiene el mayor impacto posible.</p>
+            </div>
+            <div class="card card-compact card-flat">
+                <h4 class="display-sm" style="color: var(--emerald); margin-bottom: var(--space-3);">Gasto Volátil por Carrera</h4>
+                <p class="body-sm text-secondary">Las <strong>Fotocopias e Impresiones</strong> son el ítem más volátil (CV 41,57%). Carreras de humanidades o salud, con más lectura física, gastan significativamente más que ingenierías con soporte digital. Esto crea una oportunidad: tótems de auto-impresión a precio de costo pueden aliviar esta presión de forma focalizada.</p>
+            </div>
+        </div>
+
+        <!-- Frecuencias de consumo -->
+        <div class="card fade-up" style="margin-top: var(--space-8);">
+            <h3 class="display-sm" style="margin-bottom: var(--space-6);">Frecuencia de consumo semanal</h3>
+            <div class="freq-bars">
+                <div class="freq-bar-row">
+                    <span class="freq-bar-label">Café o bebidas</span>
+                    <div class="freq-bar-track">
+                        <div class="freq-bar-fill" style="width: 55.4%; background: linear-gradient(90deg, #0891b2, #22d3ee);"></div>
+                    </div>
+                    <span class="freq-bar-value">3,88 días</span>
+                </div>
+                <div class="freq-bar-row">
+                    <span class="freq-bar-label">Fotocopias / impresiones</span>
+                    <div class="freq-bar-track">
+                        <div class="freq-bar-fill" style="width: 49.1%; background: linear-gradient(90deg, #059669, #34d399);"></div>
+                    </div>
+                    <span class="freq-bar-value">3,44 días</span>
+                </div>
+                <div class="freq-bar-row">
+                    <span class="freq-bar-label">Almuerzo en Casino UOH</span>
+                    <div class="freq-bar-track">
+                        <div class="freq-bar-fill" style="width: 31.4%; background: linear-gradient(90deg, #2563eb, #60a5fa);"></div>
+                    </div>
+                    <span class="freq-bar-value">2,20 días</span>
+                </div>
+                <div class="freq-bar-row">
+                    <span class="freq-bar-label">Comida al paso (externa)</span>
+                    <div class="freq-bar-track">
+                        <div class="freq-bar-fill" style="width: 25.6%; background: linear-gradient(90deg, #d97706, #fbbf24);"></div>
+                    </div>
+                    <span class="freq-bar-value">1,79 días</span>
+                </div>
+            </div>
+            <p class="body-sm text-tertiary" style="margin-top: var(--space-4);">Escala de 0 a 7 días por semana. El café es la transacción más frecuente, no la más costosa.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION 3: PRUEBAS DE HIPÓTESIS
+     ============================================================ -->
+<section class="section" id="hipotesis">
+    <div class="section-inner">
+        <div class="section-header fade-up">
+            <h2 class="display-md">Validación Estadística</h2>
+            <p class="body-lg text-secondary">¿Los datos son lo suficientemente fuertes para respaldar las conclusiones? Dos pruebas Z lo confirman con potencia superior al 99,9%.</p>
+        </div>
+
+        <!-- Test 1: Gasto Mensual -->
+        <div class="z-test-visual fade-up" style="margin-bottom: var(--space-8);">
+            <h3 class="display-sm" style="margin-bottom: var(--space-2);">Prueba 1: ¿Es más caro vivir en el campus?</h3>
+            <p class="body-sm text-secondary" style="margin-bottom: var(--space-4); max-width: 70ch;">
+                Se contrasta si el gasto promedio del campus ($161.000) supera significativamente el referencial de Rancagua ($130.000). Prueba Z de una cola, &alpha; = 0,05.
+            </p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: var(--space-4); margin-bottom: var(--space-4);">
+                <div>
+                    <span class="body-xs text-tertiary">Hipótesis nula (H<sub>0</sub>)</span><br>
+                    <span class="body-sm"><strong>&mu;<sub>gasto</sub> = $130.000</strong> (no hay premium)</span>
+                </div>
+                <div>
+                    <span class="body-xs text-tertiary">Hipótesis alternativa (H<sub>1</sub>)</span><br>
+                    <span class="body-sm"><strong>&mu;<sub>gasto</sub> > $130.000</strong> (existe premium de cercanía)</span>
+                </div>
+            </div>
+
+            <div class="equation-block">
+                <i>Z</i> = (x&#772; &minus; &mu;<sub>0</sub>) / <i>SE</i> = (160.971 &minus; 130.000) / 2.150,88 = <strong>14,40</strong>
+            </div>
+
+            <div class="z-bar-container" style="margin-top: var(--space-10);">
+                <div class="z-bar-crit">
+                    <span class="z-label z-label-crit">Z<sub>crit</sub> = 1,645</span>
+                </div>
+                <div class="z-bar-calc" style="left: 90%;">
+                    <span class="z-label z-label-calc">Z<sub>calc</sub> = 14,40</span>
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: var(--space-4); margin-top: var(--space-6); flex-wrap: wrap;">
+                <span class="verdict-badge verdict-reject">⊘ Se RECHAZA H<sub>0</sub></span>
+                <span class="body-sm text-secondary">El gasto en el campus es significativamente mayor. <i>p</i>-value &lt; 0,0001.</span>
+            </div>
+
+            <div class="callout callout-warn" style="margin-top: var(--space-6);">
+                <div class="callout-icon">⚠</div>
+                <div class="body-sm">
+                    <strong>Lectura con matiz:</strong> El parámetro base de $130.000 es hipotético y didáctico, no proviene de un estudio oficial del INE para Rancagua. El rechazo de H<sub>0</sub> es válido condicionado a la exactitud de esta referencia.
+                </div>
+            </div>
+        </div>
+
+        <!-- Test 2: Shrinkflation -->
+        <div class="z-test-visual fade-up">
+            <h3 class="display-sm" style="margin-bottom: var(--space-2);">Prueba 2: ¿Existe consenso sobre la shrinkflation?</h3>
+            <p class="body-sm text-secondary" style="margin-bottom: var(--space-4); max-width: 70ch;">
+                Se evalúa si la proporción que percibe reducción de porciones (72,67%) supera significativamente el 50%. Prueba Z para proporciones, una cola.
+            </p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: var(--space-4); margin-bottom: var(--space-4);">
+                <div>
+                    <span class="body-xs text-tertiary">H<sub>0</sub></span><br>
+                    <span class="body-sm"><strong>p<sub>sí</sub> = 0,50</strong> (sin consenso)</span>
+                </div>
+                <div>
+                    <span class="body-xs text-tertiary">H<sub>1</sub></span><br>
+                    <span class="body-sm"><strong>p<sub>sí</sub> > 0,50</strong> (mayoría percibe shrinkflation)</span>
+                </div>
+            </div>
+
+            <div class="equation-block">
+                <i>Z</i> = (p&#770; &minus; p<sub>0</sub>) / &radic;(p<sub>0</sub>(1&minus;p<sub>0</sub>)/<i>n</i>) = (0,7267 &minus; 0,50) / 0,0274 = <strong>8,27</strong>
+            </div>
+
+            <div class="z-bar-container" style="margin-top: var(--space-10);">
+                <div class="z-bar-crit">
+                    <span class="z-label z-label-crit">Z<sub>crit</sub> = 1,645</span>
+                </div>
+                <div class="z-bar-calc" style="left: 70%;">
+                    <span class="z-label z-label-calc">Z<sub>calc</sub> = 8,27</span>
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: var(--space-4); margin-top: var(--space-6); flex-wrap: wrap;">
+                <span class="verdict-badge verdict-reject">⊘ Se RECHAZA H<sub>0</sub></span>
+                <span class="body-sm text-secondary">Existe consenso mayoritario y significativo sobre la reducción de porciones.</span>
+            </div>
+
+            <div class="callout callout-warn" style="margin-top: var(--space-6);">
+                <div class="callout-icon">⚠</div>
+                <div class="body-sm">
+                    <strong>Percepción ≠ Medición física:</strong> Esta prueba evalúa la percepción subjetiva de los estudiantes, no un pesaje real de porciones. El sesgo de confirmación y el clima mediático sobre inflación pueden amplificar esta cifra.
+                </div>
+            </div>
+        </div>
+
+        <!-- Errores de decisión -->
+        <div class="card fade-up" style="margin-top: var(--space-8);">
+            <h3 class="display-sm" style="margin-bottom: var(--space-6);">Potencia y Errores de Decisión</h3>
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Concepto</th>
+                        <th>Definición</th>
+                        <th>Evaluación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Error Tipo I (&alpha;)</strong></td>
+                        <td>Concluir que hay microinflación cuando no existe. "Falso positivo".</td>
+                        <td class="cell-mono cell-highlight">p &lt; 0,0001</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Error Tipo II (&beta;)</strong></td>
+                        <td>No detectar la microinflación existiendo realmente. "Falso negativo".</td>
+                        <td class="cell-mono">&asymp; 0</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Potencia (1&minus;&beta;)</strong></td>
+                        <td>Probabilidad de detectar correctamente el efecto real.</td>
+                        <td class="cell-mono cell-highlight">&gt; 99,9%</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="body-sm text-tertiary" style="margin-top: var(--space-4);">Con n = 333 y Z-scores de 14,40 y 8,27, la potencia estadística supera el 99,9%. Si el "Costo de Conveniencia" existe, esta prueba lo detecta sin margen de error práctico.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION 4: TRANSPARENCIA Y SESGOS
+     ============================================================ -->
+<section class="section section-alt" id="sesgos">
+    <div class="section-inner">
+        <div class="section-header fade-up">
+            <h2 class="display-md">Transparencia y Control de Calidad</h2>
+            <p class="body-lg text-secondary">Ningún estudio es perfecto. Estos son los sesgos que identificamos honestamente y las medidas que tomamos para controlarlos.</p>
+        </div>
+
+        <div class="accordion fade-up" id="biasAccordion">
+            <!-- Sesgo 1 -->
+            <div class="accordion-item">
+                <button class="accordion-trigger" aria-expanded="false">
+                    <span>
+                        <span class="bias-tag bias-tag-critical">CRÍTICO</span>
+                        &nbsp; La Ilusión Probabilística (Muestreo por Conveniencia)
+                    </span>
+                    <span class="accordion-icon">▾</span>
+                </button>
+                <div class="accordion-panel">
+                    <div class="accordion-panel-inner">
+                        <p><strong>Lo que hicimos:</strong> Se calcularon errores muestrales, Factor de Corrección de Población Finita (FPC) y pruebas Z asumiendo un muestreo aleatorio simple.</p>
+                        <p><strong>La realidad:</strong> La encuesta fue difundida por redes sociales y canales estudiantiles informales. Esto constituye un <strong>muestreo no probabilístico por conveniencia y autoselección</strong>.</p>
+                        <p><strong>Lo que significa:</strong> Aplicar fórmulas de inferencia probabilística aquí es un recurso heurístico y didáctico común. Pero es una "ilusión probabilística": estudiantes con mayor conectividad o insatisfacción presupuestaria podrían haber respondido en mayor proporción, sesgando los resultados.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sesgo 2 -->
+            <div class="accordion-item">
+                <button class="accordion-trigger" aria-expanded="false">
+                    <span>
+                        <span class="bias-tag bias-tag-warning">MODERADO</span>
+                        &nbsp; Sesgo de Memoria (Recall Bias)
+                    </span>
+                    <span class="accordion-icon">▾</span>
+                </button>
+                <div class="accordion-panel">
+                    <div class="accordion-panel-inner">
+                        <p><strong>El problema:</strong> Los estudiantes estiman su gasto mensual "en frío" y declaran frecuencias de consumo promedio basándose en el recuerdo selectivo del último mes.</p>
+                        <p><strong>El impacto:</strong> Pueden sobreestimar los días de asistencia o redondear los montos para ajustarse a una "respuesta esperada" (deseabilidad social). La base de datos es puramente declarativa, no basada en boletas ni transacciones electrónicas reales.</p>
+                        <p><strong>Control:</strong> Con n = 333, la ley de los grandes números compensa las variaciones aleatorias por memoria, tendiendo a estabilizar la media.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sesgo 3 -->
+            <div class="accordion-item">
+                <button class="accordion-trigger" aria-expanded="false">
+                    <span>
+                        <span class="bias-tag bias-tag-warning">MODERADO</span>
+                        &nbsp; Falsa Precisión (Overprecision)
+                    </span>
+                    <span class="accordion-icon">▾</span>
+                </button>
+                <div class="accordion-panel">
+                    <div class="accordion-panel-inner">
+                        <p><strong>Lo que parece:</strong> Una media de $160.971,47 y una varianza de 1.540.552.647,53 sugieren precisión científica extrema.</p>
+                        <p><strong>La realidad:</strong> Los decimales son artefactos puramente matemáticos. Los estudiantes estiman redondeando mentalmente ("como $160 lucas"). Los decimales carecen de representatividad científica real.</p>
+                        <p><strong>Lo correcto:</strong> Reportar <strong>Media &asymp; $161.000</strong> y <strong>Desviación Estándar &asymp; $39.250</strong>. Los decimales se mantienen solo en las bases de datos, no en las conclusiones.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sesgo 4 -->
+            <div class="accordion-item">
+                <button class="accordion-trigger" aria-expanded="false">
+                    <span>
+                        <span class="bias-tag bias-tag-info">DIDÁCTICO</span>
+                        &nbsp; La Ilusión de la Causalidad
+                    </span>
+                    <span class="accordion-icon">▾</span>
+                </button>
+                <div class="accordion-panel">
+                    <div class="accordion-panel-inner">
+                        <p><strong>Lo que sugiere el informe:</strong> Las variables de frecuencia de consumo (casino, café, copias) <em>causan</em> el incremento del gasto mensual.</p>
+                        <p><strong>La realidad:</strong> Este estudio es descriptivo y transversal. Solo se ha demostrado una asociación. Para causalidad estadística rigurosa, se necesitaría un modelo de regresión múltiple que controle ingresos, becas, traslados y otras variables confusoras.</p>
+                        <p><strong>Lectura correcta:</strong> La causalidad se maneja como una hipótesis económica de demanda inelástica (Premium de Cercanía), no como un modelo empírico de causa-efecto verificado matemáticamente.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sesgo 5 -->
+            <div class="accordion-item">
+                <button class="accordion-trigger" aria-expanded="false">
+                    <span>
+                        <span class="bias-tag bias-tag-info">DIDÁCTICO</span>
+                        &nbsp; El Parámetro Base Hipotético ($130.000)
+                    </span>
+                    <span class="accordion-icon">▾</span>
+                </button>
+                <div class="accordion-panel">
+                    <div class="accordion-panel-inner">
+                        <p><strong>El supuesto:</strong> Toda la prueba Z para la media del gasto se apoya en que el gasto referencial de un estudiante en Rancagua es de $130.000 CLP mensuales.</p>
+                        <p><strong>La realidad:</strong> Esta cifra es un valor hipotético y didáctico. No proviene de la Encuesta de Presupuestos Familiares del INE ni de estudios socioeconómicos locales.</p>
+                        <p><strong>Implicancia:</strong> Si el gasto estudiantil real en la ciudad fuera de $155.000, la diferencia dejaría de ser estadísticamente significativa y la teoría del mercado cautivo se debilitaría considerablemente.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sesgo 6 -->
+            <div class="accordion-item">
+                <button class="accordion-trigger" aria-expanded="false">
+                    <span>
+                        <span class="bias-tag bias-tag-warning">MODERADO</span>
+                        &nbsp; Subjetividad de la Shrinkflation
+                    </span>
+                    <span class="accordion-icon">▾</span>
+                </button>
+                <div class="accordion-panel">
+                    <div class="accordion-panel-inner">
+                        <p><strong>Lo que mide la encuesta:</strong> La percepción subjetiva de los estudiantes sobre si las porciones disminuyeron, no una medición empírica de los gramajes reales.</p>
+                        <p><strong>El riesgo:</strong> El sesgo de confirmación y el clima mediático sobre inflación pueden amplificar esta cifra. Un 72,67% percibe shrinkflation, pero esto no equivale a un 72,67% de contracción real.</p>
+                        <p><strong>Recomendación:</strong> Antes de tomar decisiones presupuestarias, auditar los gramajes y porciones reales con pesajes físicos independientes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Control de calidad del instrumento -->
+        <div class="card fade-up" style="margin-top: var(--space-10);">
+            <h3 class="display-sm" style="margin-bottom: var(--space-6);">Medidas de Control de Calidad del Instrumento</h3>
+            <div class="bento-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <div class="card card-compact card-flat">
+                    <h4 style="font-size: 1rem; margin-bottom: var(--space-2); color: var(--accent);">Anti-Fatiga</h4>
+                    <p class="body-sm text-secondary">Formulario de interfaz única, fluida y responsiva. Menos de 60 segundos para completar. Sin menús complejos ni explicaciones técnicas excesivas.</p>
+                </div>
+                <div class="card card-compact card-flat">
+                    <h4 style="font-size: 1rem; margin-bottom: var(--space-2); color: var(--cyan);">Auto-Ajuste 100%</h4>
+                    <p class="body-sm text-secondary">Javascript reactivo redistribuye porcentajes para que la suma sea exactamente 100%. Elimina errores de cálculo mental del encuestado.</p>
+                </div>
+                <div class="card card-compact card-flat">
+                    <h4 style="font-size: 1rem; margin-bottom: var(--space-2); color: var(--emerald);">Lenguaje Claro</h4>
+                    <p class="body-sm text-secondary">Cero tecnicismos. "Almuerzo en Casino" en vez de "CCIF 2018.CL". La conversión a clasificaciones INE es automática en el backend.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION 5: PROPUESTAS ESTRATÉGICAS
+     ============================================================ -->
+<section class="section section-dark" id="propuestas">
+    <div class="section-inner">
+        <div class="section-header fade-up">
+            <h2 class="display-md">Propuestas para la Acción</h2>
+            <p class="body-lg">Los datos hablan. Estas son las intervenciones concretas que el estudio recomienda para el Sistema de Apoyo a las Decisiones (SAD) de la UOH.</p>
+        </div>
+
+        <div class="callout" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); margin-bottom: var(--space-10);" class="fade-up">
+            <div class="callout-icon" style="background: var(--amber); color: #fff;">⚡</div>
+            <div class="body-sm" style="color: rgba(241,245,249,0.75);">
+                <strong style="color: #fff;">Principio rector:</strong> Dado el carácter declarativo y subjetivo de los datos recopilados, todas las siguientes propuestas se plantean como <strong style="color: #fff;">hipótesis de trabajo y pilotos exploratorios</strong>, no como políticas definitivas.
+            </div>
+        </div>
+
+        <div class="proposals-grid stagger-children fade-up">
+            <!-- Propuesta 1 -->
+            <div class="proposal-card" style="background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.08);">
+                <span class="proposal-number">Propuesta 01</span>
+                <span class="proposal-badge badge-data">Validación de Datos</span>
+                <h4 style="color: #fff;">Auditoría Transaccional Cruzada</h4>
+                <p style="color: rgba(241,245,249,0.65);">Antes de implementar indexaciones o subsidios, contrastar el gasto declarado con datos reales de facturación del casino concesionado y registros de transferencias electrónicas. Esto mide la magnitud del sesgo de autorreporte y calibra los modelos del SAD.</p>
+            </div>
+
+            <!-- Propuesta 2 -->
+            <div class="proposal-card" style="background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.08);">
+                <span class="proposal-number">Propuesta 02</span>
+                <span class="proposal-badge badge-high">Alto Impacto</span>
+                <h4 style="color: #fff;">Indexar Becas al IPEU</h4>
+                <p style="color: rgba(241,245,249,0.65);">Estudiar la viabilidad de indexar la Beca de Alimentación Interna a las variaciones del IPEU-Rancagua. Esto protege el poder adquisitivo estudiantil frente a la inflación hiper-local, ajustándose automáticamente al costo real del campus.</p>
+            </div>
+
+            <!-- Propuesta 3 -->
+            <div class="proposal-card" style="background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.08);">
+                <span class="proposal-number">Propuesta 03</span>
+                <span class="proposal-badge badge-high">Alto Impacto</span>
+                <h4 style="color: #fff;">Regular Licitaciones y Combatir Shrinkflation</h4>
+                <p style="color: rgba(241,245,249,0.65);">Incorporar el IPEU como árbitro de negociación con concesionarios. Establecer bandas de precios máximos basadas en el IPC comunal y exigir auditorías de gramajes mínimos por ración con pesajes físicos aleatorios e independientes.</p>
+            </div>
+
+            <!-- Propuesta 4 -->
+            <div class="proposal-card" style="background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.08);">
+                <span class="proposal-number">Propuesta 04</span>
+                <span class="proposal-badge badge-medium">Impacto Directo</span>
+                <h4 style="color: #fff;">Subsidios Directos al Almuerzo</h4>
+                <p style="color: rgba(241,245,249,0.65);">El grupo de Almuerzo y Comida concentra el 49,23% del presupuesto con baja dispersión (CV 24,56%). Subsidiar el almuerzo impacta directamente el componente más costoso y transversal de la vida estudiantil.</p>
+            </div>
+
+            <!-- Propuesta 5 -->
+            <div class="proposal-card" style="background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.08);">
+                <span class="proposal-number">Propuesta 05</span>
+                <span class="proposal-badge badge-medium">Costo Bajo</span>
+                <h4 style="color: #fff;">Tótems de Impresión Autogestionados</h4>
+                <p style="color: rgba(241,245,249,0.65);">Aprovechar la alta volatilidad en Fotocopias (CV 41,57%) para descentralizar el servicio. Tótems de auto-impresión operados por centros de estudiantes a precio de costo alivian la presión presupuestaria en material de estudio.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <img src="uoh_logo.svg" alt="Universidad de O'Higgins">
+            <p>Índice de Precios del Entorno Universitario (IPEU-Rancagua). Investigación de Mercados, Marketing I. Campus Rancagua, Junio 2026.</p>
+        </div>
+        <div class="footer-links">
+            <a href="datos_encuesta.json" download>Base de datos (JSON)</a>
+            <a href="estadisticos.json" download>Estadísticos (JSON)</a>
+            <a href="index.html">Encuesta Digital</a>
+            <a href="informe_final.html">Informe Formal</a>
+        </div>
+    </div>
+    <div class="footer-copy">
+        <p>Integrantes: Benjamín Alarcón · Jorge Huerta · Pedro López · Benjamín Murga &nbsp;|&nbsp; Docente: Cristian Orellana Pino</p>
+        <p style="margin-top: var(--space-2);">&copy; 2026 Universidad de O'Higgins. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script>
+(function() {
+    'use strict';
+
+    // ---- Nav scroll shadow ----
+    const nav = document.getElementById('siteNav');
+    function onScroll() {
+        nav.classList.toggle('scrolled', window.scrollY > 20);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // ---- Nav tabs → smooth scroll ----
+    const tabs = document.querySelectorAll('.nav-tab');
+    const sections = document.querySelectorAll('.section[id], .hero[id]');
+
+    tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+            var targetId = this.getAttribute('data-section');
+            var target = document.getElementById(targetId);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // ---- Active tab on scroll (IntersectionObserver) ----
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                var id = entry.target.id;
+                tabs.forEach(function(t) {
+                    t.classList.toggle('active', t.getAttribute('data-section') === id);
+                });
+            }
+        });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+
+    sections.forEach(function(section) { observer.observe(section); });
+
+    // ---- Accordion ----
+    document.querySelectorAll('.accordion-trigger').forEach(function(trigger) {
+        trigger.addEventListener('click', function() {
+            var item = this.parentElement;
+            var panel = item.querySelector('.accordion-panel');
+            var isOpen = item.classList.contains('open');
+
+            // Close all
+            document.querySelectorAll('.accordion-item').forEach(function(ai) {
+                ai.classList.remove('open');
+                var p = ai.querySelector('.accordion-panel');
+                p.style.maxHeight = null;
+                ai.querySelector('.accordion-trigger').setAttribute('aria-expanded', 'false');
+            });
+
+            // Open clicked (if it was closed)
+            if (!isOpen) {
+                item.classList.add('open');
+                panel.style.maxHeight = panel.scrollHeight + 'px';
+                this.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+
+    // ---- Fade-up on scroll (IntersectionObserver) ----
+    var fadeObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                fadeObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up').forEach(function(el) {
+        fadeObserver.observe(el);
+    });
+
+})();
+</script>
+
+</body>
+</html>
